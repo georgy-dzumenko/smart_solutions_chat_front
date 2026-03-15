@@ -1,0 +1,163 @@
+@use 'sass:map';
+
+@use '@styles/media' as *;
+
+@use './theme' as *;
+@use './modifiers' as *;
+
+$fonts: (
+    'primary': 'Roboto',
+    'secondary': 'Roboto',
+);
+
+@mixin MainLogo($weight: 800, $color: theme('text-primary')) {
+    font-family: map.get($fonts, 'primary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: 1.92px;
+
+    @include tablet {
+        font-size: 56px;
+        line-height: 72px;
+        letter-spacing: 1.68px;
+    }
+
+    @include mobile {
+        font-size: 32px;
+        line-height: 44px;
+        letter-spacing: 1px;
+    }
+}
+
+@mixin H1($weight: 600, $color: theme('text-primary')) {
+    font-family: map.get($fonts, 'primary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 56px;
+    line-height: 72px;
+    letter-spacing: 1%;
+
+    @include tablet {
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: 0.48px;
+    }
+
+    @include mobile {
+        font-size: 32px;
+        line-height: 44px;
+        letter-spacing: 1px;
+    }
+}
+
+@mixin H2($weight: 600, $color: theme('text-primary')) {
+    font-family: map.get($fonts, 'primary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 48px;
+    line-height: 64px;
+
+    @include tablet {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    @include mobile {
+        font-size: 32px;
+        line-height: 44px;
+    }
+}
+
+@mixin H3($weight: 600, $color: theme('text-primary')) {
+    font-family: map.get($fonts, 'primary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 36px;
+    line-height: 48px;
+
+    @include tablet {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    @include mobile {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+@mixin H4($weight: 600, $color: theme('text-primary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 24px;
+    line-height: 38px;
+
+    @include mobile {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+@mixin text($weight: 400, $color: theme('text-secondary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 20px;
+    line-height: 32px;
+
+    @include tablet {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    @include mobile {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+@mixin little-text($weight: 400, $color: theme('text-tertiary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+@mixin little-ticker($weight: 400, $color: theme('text-tertiary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include mobile {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@mixin small-text($weight: 400, $color: theme('text-tertiary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin tiny-text($weight: 400, $color: theme('text-tertiary')) {
+    font-family: map.get($fonts, 'secondary');
+    font-weight: $weight;
+    color: $color;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@mixin little_text--no-select {
+    @include no-select-no-drag;
+
+    @include B1;
+}

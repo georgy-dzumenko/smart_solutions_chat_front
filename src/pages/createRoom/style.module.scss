@@ -1,0 +1,21 @@
+@use '@styles/tokens' as *;
+
+.chat-configs {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 24px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include H1(600, theme('text-primary'));
+    }
+
+    &__description {
+        @include text(600, theme('text-primary'));
+    }
+}

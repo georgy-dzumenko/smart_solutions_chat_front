@@ -1,0 +1,56 @@
+@use '@styles/tokens' as *;
+
+.modal {
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background: transparent;
+    transition: 0.4s ease;
+    // align-items: center;
+
+    &[data-opened='true'] {
+        display: flex;
+        pointer-events: all;
+        background: rgba(20, 20, 20, 0.8);
+    }
+
+    &__content {
+        transform: translateY(110vh);
+        transition: 0.4s ease;
+        height: max-content;
+        width: max-content;
+
+        [data-opened='true'] & {
+            transform: translateY(0%);
+        }
+    }
+
+    &__actions {
+        pointer-events: all;
+    }
+
+    &__close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        height: 30px;
+        aspect-ratio: 1/1;
+        cursor: pointer;
+
+        transform: translateY(-200%);
+        transition: 0.2s ease;
+
+        background-color: red;
+
+        [data-opened='true'] & {
+            transform: translateY(0%);
+        }
+    }
+}

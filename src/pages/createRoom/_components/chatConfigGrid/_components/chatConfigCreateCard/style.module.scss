@@ -1,0 +1,45 @@
+@use '@styles/tokens' as *;
+
+.chat-config-create-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 18px;
+    min-height: 100%;
+    padding: 20px;
+    background: #ffffff;
+    background-color: palette('snow');
+    border: 1px solid palette('fog');
+    border-radius: 20px;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: #d1d5db;
+        box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+    }
+
+    &::before {
+        content: '';
+        display: flex;
+        height: 60px;
+        width: 60px;
+
+        mask-image: url(@assets/images/plus/icon.svg);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+        background-color: palette('ink');
+    }
+
+    &__title {
+        @include H4(600, theme('text-primary'));
+    }
+}

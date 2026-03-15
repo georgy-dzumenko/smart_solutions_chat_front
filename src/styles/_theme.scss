@@ -1,0 +1,53 @@
+@use 'sass:map';
+
+@use './palette.scss' as *;
+
+$theme: (
+  // ===== Accent =====
+  'accent-primary': 'sage-deep',
+  'accent-secondary': 'sage',
+  'accent-tertiary': 'sage-soft',
+
+  // ===== Text =====
+  'text-primary': 'ink',
+  'text-secondary': 'graphite',
+  'text-tertiary': 'ash',
+
+  'text-inverse-primary': 'white',
+  'text-inverse-secondary': 'fog',
+  'text-inverse-tertiary': 'mist',
+
+  // ===== Backgrounds =====
+  'background-body': 'cloud',
+  'background-surface': 'white',
+  'background-panel': 'snow',
+
+  'background-inverse-body': 'ink',
+  'background-inverse-surface': 'graphite',
+
+  // ===== Messages =====
+  'message-me-bg': 'sand-soft',
+  'message-me-text': 'ink',
+
+  'message-other-bg': 'fog',
+  'message-other-text': 'ink',
+
+  // ===== Inputs =====
+  'input-bg': 'white',
+  'input-border': 'mist',
+  'input-focus': 'sage-deep',
+
+  // ===== States =====
+  'state-success': 'success',
+  'state-warning': 'warning',
+  'state-error': 'error',
+);
+
+
+@function theme($key, $alpha: null) {
+    @if $alpha != null {
+        @return color-mix(in srgb, var(--theme-#{$key}) #{$alpha * 100%}, transparent);
+    }
+
+    @return var(--theme-#{$key});
+}

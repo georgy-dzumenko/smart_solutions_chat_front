@@ -1,0 +1,17 @@
+{
+    "Auth": {
+        "SignIn": {
+            "title": "Sign in",
+            "email": "Email",
+            "password": "Password",
+            "submit": "Submit"
+        },
+        "Register": {
+            "title": "Register",
+            "email": "Email",
+            "password": "Password",
+            "repeatPassword": "Repeat Password",
+            "submit": "Submit"
+        }
+    }
+}

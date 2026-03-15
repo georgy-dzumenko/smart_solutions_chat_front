@@ -1,0 +1,116 @@
+{
+    "Auth": {
+        "SignIn": {
+            "title": "Sign in",
+            "email": "Email",
+            "password": "Password",
+            "submit": "Submit"
+        },
+        "Register": {
+            "title": "Register",
+            "email": "Email",
+            "password": "Password",
+            "repeatPassword": "Repeat Password",
+            "submit": "Submit"
+        }
+    },
+    "ChatConfigEditor": {
+        "description": "Configure the AI chat scenario that will be shared with the client.",
+        "Create": {
+            "title": "Create chat config"
+        },
+        "Edit": {
+            "title": "Edit chat config"
+        },
+        "Sections": {
+            "basic": {
+                "title": "Basic information",
+                "description": "General settings of the scenario and its visibility."
+            },
+            "ai": {
+                "title": "AI behavior",
+                "description": "Describe the role, goal and rules the neural model should follow."
+            },
+            "flow": {
+                "title": "Conversation flow",
+                "description": "Define when the conversation should end and how the assistant should finish it."
+            },
+            "summary": {
+                "title": "Summary generation",
+                "description": "Explain what kind of post-conversation summary and analysis should be generated for the admin."
+            }
+        },
+        "Fields": {
+            "title": {
+                "label": "Title",
+                "placeholder": "For example: Qualification chat for consultation"
+            },
+            "topic": {
+                "label": "Topic",
+                "placeholder": "Describe the main topic of the conversation"
+            },
+            "assistantRole": {
+                "label": "Assistant role",
+                "placeholder": "Describe who the assistant is and how it should behave"
+            },
+            "goal": {
+                "label": "Goal",
+                "placeholder": "Describe the result the assistant should achieve in this conversation"
+            },
+            "rules": {
+                "label": "Rules",
+                "placeholder": "List restrictions and important behavioral rules"
+            },
+            "endConditions": {
+                "label": "End conditions",
+                "placeholder": "Describe when the assistant should finish the conversation"
+            },
+            "farewellMessage": {
+                "label": "Farewell message",
+                "placeholder": "Write the final message that should be sent before the chat is completed"
+            },
+            "summaryInstructions": {
+                "label": "Summary instructions",
+                "placeholder": "Explain what summary, result and client analysis should be generated"
+            },
+            "isActive": {
+                "label": "Active"
+            }
+        },
+        "publicUrl": {
+            "label": "Public link",
+            "copy": "Copy"
+        },
+        "Actions": {
+            "cancel": "Cancel",
+            "create": "Create",
+            "save": "Save",
+            "loading": "Loading..."
+        },
+        "Errors": {
+            "required": "This field is required"
+        }
+    },
+    "ChatConfigsGrid": {
+        "title": "Ваші конфігурації чатів",
+        "description": "Створюйте та та налаштовуйте схеми спілкування з клієнтами",
+        "Empty": {
+            "title": "No chat configs yet",
+            "description": "Create your first configuration to generate a client link and start collecting conversations."
+        },
+        "CreateCard": {
+            "title": "Create new config"
+        },
+        "Card": {
+            "topic": "Topic",
+            "goal": "Goal",
+            "slug": "Slug",
+            "createdAt": "Created",
+            "publicLink": "Public link",
+            "copy": "Copy",
+            "edit": "Edit",
+            "statusActive": "Active",
+            "statusInactive": "Inactive"
+        }
+    }
+}

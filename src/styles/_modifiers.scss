@@ -1,0 +1,28 @@
+@mixin no-select-no-drag {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    user-select: none;
+    -drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+@mixin masked-icon($url, $color) {
+    mask-image: $url;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    background-color: $color;
+}
+
+@mixin scroll-based-animation($animation-name, $delay: 0s, $animation-timing-function: linear) {
+    animation-name: $animation-name;
+    animation-timing-function: $animation-timing-function;
+    animation-play-state: paused;
+    animation-duration: 1s;
+    animation-delay: calc($delay + -1s * var(--scroll-animation-progress));
+}

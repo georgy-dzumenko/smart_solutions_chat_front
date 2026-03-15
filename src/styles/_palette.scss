@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+$palette: (
+    // ===== Neutral / Warm gray =====
+    'ink': #2e2f2d,
+    'graphite': #5f615d,
+    'ash': #8e918c,
+    'mist': #cfd3ce,
+    'fog': #e6e9e5,
+    'cloud': #f4f5f3,
+    'snow': #fafafa,
+    'white': #ffffff,
+
+    // ===== Accent / Sage =====
+    'sage-soft': #dce7e5,
+    'sage': #9fbfb8,
+    'sage-deep': #7ea6a0,
+
+    // ===== Warm / Sand =====
+    'sand-soft': #efe7dc,
+    'sand': #e2d3bf,
+
+    // ===== Status =====
+    'success': #8fb8a8,
+    'warning': #ebb251,
+    'error': #d7a1a1
+);
+
+@function palette($key, $alpha: null) {
+    @if $alpha != null {
+        @return color-mix(in srgb, var(--palette-#{$key}) #{$alpha * 100%}, transparent);
+    }
+
+    @return var(--palette-#{$key});
+}

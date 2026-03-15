@@ -1,0 +1,123 @@
+@use '@styles/tokens' as *;
+
+.chat-config-editor {
+    background: theme('background-surface');
+    border-radius: 20px;
+
+    &__header {
+        padding: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid palette('fog');
+    }
+
+    &__header-texts {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &__description {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+        color: palette('ink');
+    }
+
+    &__form {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow: scroll;
+        max-height: calc(100vh - 200px);
+    }
+
+    &__server-error {
+        padding: 12px 14px;
+        border: 1px solid #f3b3b3;
+        border-radius: 12px;
+        background: #fff1f1;
+        color: #b42318;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    &__public-url-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        background: #f9fafb;
+    }
+
+    &__public-url-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    &__public-url-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    &__public-url-input {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 12px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        background: #ffffff;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #111827;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 8px;
+    }
+
+    &__primary-button,
+    &__secondary-button {
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            opacity 0.2s ease;
+        cursor: pointer;
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    &__primary-button {
+        border: 1px solid #111827;
+        background: #111827;
+        color: #ffffff;
+    }
+
+    &__secondary-button {
+        border: 1px solid #d1d5db;
+        background: #ffffff;
+        color: #111827;
+    }
+}

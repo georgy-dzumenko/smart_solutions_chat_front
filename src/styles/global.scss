@@ -1,0 +1,23 @@
+@forward '@styles/reset';
+
+@use '@assets/fonts/init' as *;
+
+@use '@styles/tokens' as *;
+
+@include font-face;
+
+:root {
+    @include text(400, theme('text-primary'));
+}
+
+body {
+    width: 100vw;
+
+    @each $key, $value in $palette {
+        --palette-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $theme {
+        --theme-#{$key}: #{palette($value)};
+    }
+}

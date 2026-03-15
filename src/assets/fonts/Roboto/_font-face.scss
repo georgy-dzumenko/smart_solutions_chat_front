@@ -1,0 +1,27 @@
+$family: 'Roboto';
+
+@mixin font-face {
+    @font-face {
+        font-family: $family;
+        font-style: normal;
+        font-weight: 400;
+        src: url(./files/Roboto-Regular.ttf) format('truetype');
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: $family;
+        font-style: normal;
+        font-weight: 500;
+        src: url(./files/Roboto-Medium.ttf) format('truetype');
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: $family;
+        font-style: normal;
+        font-weight: 600;
+        src: url(./files/Roboto-SemiBold.ttf) format('truetype');
+        font-display: swap;
+    }
+}

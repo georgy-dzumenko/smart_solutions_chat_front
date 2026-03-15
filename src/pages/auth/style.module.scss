@@ -1,0 +1,90 @@
+@use '@styles/tokens' as *;
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100dvh;
+    padding: 16px;
+}
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow:
+        2px 2px 8px 0 palette('ink', 0.16),
+        inset -2px -2px 8px 0 palette('ink', 0.16);
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+
+        h1 {
+            display: flex;
+            align-items: flex-end;
+
+            @include H3(500, theme('text-primary'));
+
+            & {
+                line-height: 36px;
+            }
+
+            &::after {
+                content: '/';
+                display: flex;
+                width: max-content;
+                margin: 0 10px;
+                @include text;
+            }
+        }
+
+        a {
+            @include text(400, theme('accent-primary'));
+
+            cursor: pointer;
+
+            &:hover {
+                color: theme('accent-secondary');
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        // padding: 20px 0;
+
+        & input {
+            padding: 12px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            border: solid 2px theme('accent-secondary');
+        }
+
+        & label {
+            margin-left: 4px;
+        }
+    }
+
+    &__submit {
+        padding: 12px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        background-color: theme('accent-primary');
+        color: theme('text-inverse-primary');
+    }
+
+    &__error {
+        @include small-text(400, palette('warning'));
+
+        margin-top: -16px;
+        margin-bottom: 16px;
+    }
+}

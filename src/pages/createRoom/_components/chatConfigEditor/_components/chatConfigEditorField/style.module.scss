@@ -1,0 +1,68 @@
+@use '@styles/tokens' as *;
+
+.chat-config-editor-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__label {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #111827;
+    }
+
+    &__control {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        background: #ffffff;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #111827;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s ease;
+
+        &::placeholder {
+            color: #9ca3af;
+        }
+
+        &:focus {
+            border-color: #111827;
+        }
+
+        &--error {
+            border-color: #dc2626;
+        }
+    }
+
+    &__textarea {
+        resize: vertical;
+    }
+
+    &__error {
+        font-size: 13px;
+        line-height: 1.4;
+        color: #dc2626;
+    }
+
+    &__checkbox-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #111827;
+        cursor: pointer;
+    }
+
+    &__checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,5 @@
+@use './Roboto/font-face' as roboto;
+
+@mixin font-face {
+    @include roboto.font-face;
+}
