@@ -11,12 +11,14 @@ const api = axios.create({
 export const useAuthStore = create((set, get) => ({
     user: null,
     accessToken: null,
+    initialized: false,
     isAuthenticated: false,
     isLoading: false,
     error: null,
 
     setAccessToken: (token) => {
         set({
+            initialized: true,
             accessToken: token,
             isAuthenticated: Boolean(token),
         })
@@ -42,6 +44,7 @@ export const useAuthStore = create((set, get) => ({
             set({
                 user,
                 accessToken,
+                initialized: true,
                 isAuthenticated: true,
                 isLoading: false,
                 error: null,
@@ -74,6 +77,7 @@ export const useAuthStore = create((set, get) => ({
             set({
                 user,
                 accessToken,
+                initialized: true,
                 isAuthenticated: true,
                 isLoading: false,
                 error: null,
@@ -100,6 +104,7 @@ export const useAuthStore = create((set, get) => ({
 
             set({
                 accessToken,
+                initialized: true,
                 isAuthenticated: true,
             })
 
@@ -108,6 +113,7 @@ export const useAuthStore = create((set, get) => ({
             set({
                 user: null,
                 accessToken: null,
+                initialized: true,
                 isAuthenticated: false,
             })
 
@@ -124,6 +130,7 @@ export const useAuthStore = create((set, get) => ({
             set({
                 user: null,
                 accessToken: null,
+                initialized: true,
                 isAuthenticated: false,
                 isLoading: false,
                 error: null,
@@ -149,12 +156,14 @@ export const useAuthStore = create((set, get) => ({
 
             set({
                 user: response.data.user,
+                initialized: true,
                 isAuthenticated: true,
             })
 
             return response.data
         } catch (error) {
             set({
+                initialized: true,
                 user: null,
                 accessToken: null,
                 isAuthenticated: false,

@@ -120,5 +120,39 @@
         "completed": "This conversation has been completed.",
         "inputPlaceholder": "Type your message...",
         "send": "Send"
+    },
+    "Panel": {
+        "title": "Results panel",
+        "descriptionAll": "All chat sessions and their short results.",
+        "descriptionByConfig": "Sessions and short results for the selected config.",
+        "loading": "Loading results...",
+        "emptyTitle": "No results yet",
+        "emptyDescription": "Completed chat sessions will appear here.",
+        "columns": {
+            "sessionId": "Session ID",
+            "status": "Status",
+            "summary": "Summary",
+            "result": "Result",
+            "createdAt": "Created"
+        }
+    },
+    "PanelSession": {
+        "title": "Session report",
+        "description": "Detailed report and full message history of the conversation.",
+        "back": "Back",
+        "loading": "Loading session details...",
+        "fields": {
+            "sessionId": "Session ID",
+            "status": "Status",
+            "configTitle": "Config title",
+            "topic": "Topic"
+        },
+        "sections": {
+            "summary": "Summary",
+            "result": "Result",
+            "clientProfile": "Client profile",
+            "recommendation": "Recommendation",
+            "history": "Message history"
+        }
     }
 }

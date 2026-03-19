@@ -15,7 +15,7 @@ const ChatConfigCard = ({ config = {} }) => {
     const openEditModal = useChatConfigEditorStore((state) => state.openEditModal)
 
     const handleCardClick = () => {
-        navigate(`/summary/${config.id}`)
+        navigate(`/panel/${config.id}`)
     }
 
     const handleEditClick = async (event) => {

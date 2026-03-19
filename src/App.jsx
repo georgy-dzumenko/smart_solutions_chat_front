@@ -9,12 +9,14 @@ import { useAuthStore } from '@stores/auth'
 import { LocalizationProvider } from './components/general/localizationProvider'
 
 import ChatPage from './pages/chat'
+import ConfigSummaryPage from './pages/configSummaryPage'
+import SessionSummaryPage from './pages/sessionSummaryPage'
 
 function GuestRoute({ children }) {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
 
     if (isAuthenticated) {
-        return <Navigate to="/panel" replace />
+        // return <Navigate to="/panel" replace />
     }
 
     return children
@@ -22,8 +24,9 @@ function GuestRoute({ children }) {
 
 function ProtectedRoute({ children }) {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
+    const initialized = useAuthStore((state) => state.initialized)
 
-    if (!isAuthenticated) {
+    if (initialized && !isAuthenticated) {
         return <Navigate to="/auth" replace />
     }
 
@@ -51,10 +54,28 @@ function App() {
                     />
 
                     <Route
-                        path="/panel/:config?"
+                        path="/panel"
                         element={
                             <ProtectedRoute>
                                 <CreateRoomPage />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/panel/:configId"
+                        element={
+                            <ProtectedRoute>
+                                <ConfigSummaryPage />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/panel/:configId/:sessionId"
+                        element={
+                            <ProtectedRoute>
+                                <SessionSummaryPage />
                             </ProtectedRoute>
                         }
                     />
