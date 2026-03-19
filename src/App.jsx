@@ -1,17 +1,20 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
 import AuthPage from '@pages/auth'
-import CreateRoomPage from '@pages/createRoom'
-import RoomPage from '@pages/room'
-import { LocalizationProvider } from './components/general/localizationProvider'
+import CreateRoomPage from '@pages/panel'
+
 import { useAuthStore } from '@stores/auth'
-import { useEffect } from 'react'
+
+import { LocalizationProvider } from './components/general/localizationProvider'
+
+import ChatPage from './pages/chat'
 
 function GuestRoute({ children }) {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
 
     if (isAuthenticated) {
-        return <Navigate to="/create-room" replace />
+        return <Navigate to="/panel" replace />
     }
 
     return children
@@ -48,7 +51,7 @@ function App() {
                     />
 
                     <Route
-                        path="/create-room"
+                        path="/panel/:config?"
                         element={
                             <ProtectedRoute>
                                 <CreateRoomPage />
@@ -56,14 +59,7 @@ function App() {
                         }
                     />
 
-                    <Route
-                        path="/room/:schemeId/:userId"
-                        element={
-                            <ProtectedRoute>
-                                <RoomPage />
-                            </ProtectedRoute>
-                        }
-                    />
+                    <Route path="/chat/:configId/" element={<ChatPage />} />
 
                     {/* fallback */}
                     <Route path="*" element={<Navigate to="/auth" replace />} />

@@ -112,5 +112,13 @@
             "statusActive": "Active",
             "statusInactive": "Inactive"
         }
+    },
+    "PublicChat": {
+        "title": "Chat",
+        "loading": "Loading chat...",
+        "assistantThinking": "Assistant is thinking...",
+        "completed": "This conversation has been completed.",
+        "inputPlaceholder": "Type your message...",
+        "send": "Send"
     }
 }

@@ -32,7 +32,7 @@ const AuthPage = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/create-room', { replace: true })
+            navigate('/panel', { replace: true })
         }
     }, [isAuthenticated, navigate])
 
@@ -73,7 +73,7 @@ const AuthPage = () => {
                 password: signInData.password,
             })
 
-            navigate('/create-room', { replace: true })
+            navigate('/panel', { replace: true })
         } catch (error) {
             console.error(error)
         }
@@ -116,7 +116,7 @@ const AuthPage = () => {
                 password: registerData.password,
             })
 
-            navigate('/create-room', { replace: true })
+            navigate('/panel', { replace: true })
         } catch (error) {
             console.error(error)
         }
