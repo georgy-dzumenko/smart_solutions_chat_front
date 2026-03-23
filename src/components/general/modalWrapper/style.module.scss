@@ -47,7 +47,12 @@
         transform: translateY(-200%);
         transition: 0.2s ease;
 
-        background-color: red;
+        mask-image: url(@assets/images/close/icon.svg);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+
+        background-color: palette('ink');
 
         [data-opened='true'] & {
             transform: translateY(0%);
